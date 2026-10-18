@@ -52,9 +52,29 @@ input[type="text"], input[type="email"], input[type="url"], select, textarea {
 
 textarea {
     resize: none;
+    min-height: 100px;
+}
+
+#submit {
+    border: none;
+    background-color: rgb(11, 133, 11);
+    padding: .5rem 1rem;
+    border-radius: .35rem;
+    color: white;
+    font-size: 1rem;
+}
+
+.section3 label {
+    margin-bottom: .5rem;
+}
+
+#inline {
+    display: inline;
+    margin-bottom: .5rem;
 }
 
 .err {
     color: darkred;
     display: none;
 }
+
