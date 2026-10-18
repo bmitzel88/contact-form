@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
     <link rel="stylesheet" href="styles/contact-styles.css">
-    <script src="js/form.js"></script>
+    <script src="js/form.js" defer></script>
 </head>
 <body>
     <div id="main">
@@ -13,7 +13,7 @@
             <h1>Contact Form</h1>
         </div>
 
-        <form id="contact-form">
+        <form id="contact-form" action="#" method="get">
             <div class=section1>
                 <div>
                     <label for="fname">First Name</label>
@@ -55,7 +55,7 @@
             <div class="section2">
                 
                 <div>
-                    <label for="meet-method"></label>
+                    <label for="meet-method">How did we meet?</label>
                     <select id="meet-method" name="meet-method">
                         <option id="">Please select</option>
                         <option id="online">Online</option>
