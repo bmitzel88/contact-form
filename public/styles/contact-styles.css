@@ -44,6 +44,16 @@ label {
     padding-bottom: 0.5rem;
 }
 
+input[type="text"], input[type="email"], input[type="url"], select, textarea {
+    width: 100%;
+    padding: .75rem;
+    margin-bottom: 1rem;
+}
+
+textarea {
+    resize: none;
+}
+
 .err {
     color: darkred;
     display: none;
