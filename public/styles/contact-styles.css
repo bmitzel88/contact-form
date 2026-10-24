@@ -75,7 +75,7 @@ textarea {
 
 .err {
     color: darkred;
-    display: none;
+    visibility: hidden;
 }
 
 @media (max-width: 600px) {
