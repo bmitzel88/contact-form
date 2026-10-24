@@ -37,7 +37,7 @@ body {
     align-items: end;
 }
 
-.other-container {
+.other-container, .mailing-type {
     visibility: hidden;
 }
 
@@ -74,7 +74,7 @@ textarea {
     margin-bottom: .5rem;
 }
 
-#inline {
+#inline-html, #inline-text {
     display: inline;
     margin-bottom: .5rem;
 }

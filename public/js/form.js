@@ -71,6 +71,13 @@ document.getElementById("meet-method").onchange = () => {
     }
 }
 
+document.getElementById("mailing-list").onchange = () => {
+    if (document.getElementById("mailing-list").checked) {
+        document.getElementById("inline-html").style.visibility = "visible";
+        document.getElementById("inline-text").style.visibility = "visible";
+    }
+}
+
 function clearErrors() {
     let errors = document.getElementsByClassName("err");
     for (let i=0; i<errors.length; i++) {
