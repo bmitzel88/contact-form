@@ -22,8 +22,15 @@ document.getElementById("contact-form").onsubmit = () => {
     // Check if email is required
     let mailingList = document.getElementById("mailing-list").checked;
     let email = document.getElementById("email").value.trim();
-    if (mailingList) {
+    if (mailingList && email === "") {
         document.getElementById("err-email").style.visibility = "visible";
+        isValid = false;
+
+    }
+    else if(mailingList && (!email.includes("@") || !email.includes("."))) {
+        let errEmail = document.getElementById("err-email");
+        errEmail.style.visibility = "visible";
+        errEmail.textContent = "Email must include @ and ."
         isValid = false;
     }
 
