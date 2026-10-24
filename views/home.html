@@ -56,15 +56,17 @@
             <div class="section2">
                 
                 <div>
+                    <span class="err" id="err-meet-method">This is required</span>
                     <label for="meet-method">How did we meet?</label>
                     <select id="meet-method" name="meet-method">
-                        <option id="">Please select</option>
-                        <option id="online">Online</option>
-                        <option id="friend">Through a friend</option>
+                        <option id="" value="">Please select</option>
+                        <option id="online" value="online">Online</option>
+                        <option id="friend" value="friend">Through a friend</option>
+                        <option id="other" value="other">Other</option>
                     </select>
                 </div>
-                <div>
-                    <label for="meet-method-other">Other (Please specify)</label>
+                <div class="other-container">
+                    <label id="lbl-meet-method-other" for="meet-method-other">Other (Please specify)</label>
                     <input type="text" id="meet-method-other" name="meet-method-other">
                 </div>
             </div>

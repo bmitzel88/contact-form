@@ -26,6 +26,7 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    align-items: end;
 }
 
 .section2 {
@@ -33,6 +34,11 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    align-items: end;
+}
+
+.other-container {
+    visibility: hidden;
 }
 
 .section3 {
