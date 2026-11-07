@@ -19,7 +19,7 @@ document.getElementById("contact-form").onsubmit = () => {
         isValid = false;
     }
 
-    // Check if email is required
+    // Check if email is required, if so validate it
     let mailingList = document.getElementById("mailing-list").checked;
     let email = document.getElementById("email").value.trim();
     if (mailingList && email === "") {

@@ -10,9 +10,14 @@ const PORT = 3002;
 // Enable static file serving
 app.use(express.static('public'));
 
+//Allow access of form data from req.body
+app.use(express.urlencoded({extended: true}));
+//set view engine to ejs
+app.set('view engine', 'ejs');
+
 // Define a default route ("/")
 app.get('/', (req, res) =>{
-    res.sendFile(`${import.meta.dirname}/views/home.html`);
+    res.render(`home`);
 });
 
 
