@@ -20,12 +20,20 @@ app.get('/', (req, res) =>{
     res.render(`home`);
 });
 
-// Array for submittions (as theres no database)
-const submittions = [];
+// Array for submissions (as theres no database)
+const submissions = [];
 
 // Define a admin route
 app.get('/admin', (req, res) => {
-    res.send(submittions);
+    res.send(submissions);
+});
+
+app.post('/confirm', (req, res) => {
+    const submission = req.body;
+    submittion.timestamp = new Date();
+    submissions.push(submission)
+    console.log(submission);
+    res.render('confirm', {submission});
 });
 
 
