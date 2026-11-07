@@ -20,6 +20,14 @@ app.get('/', (req, res) =>{
     res.render(`home`);
 });
 
+// Array for submittions (as theres no database)
+const submittions = [];
+
+// Define a admin route
+app.get('/admin', (req, res) => {
+    res.send(submittions);
+});
+
 
 // Start server on designated port
 app.listen(PORT, () => {
