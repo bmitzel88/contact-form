@@ -14,7 +14,7 @@
             <h1>Contact Form</h1>
         </div>
 
-        <form id="contact-form" action="/confirm" method="post">
+        <form id="contact-form" action="/submit-form" method="post">
             <div class=section1>
                 <div>
                     <span class="err" id="err-fname">First name is required</span>
@@ -83,11 +83,11 @@
                 <div class="mailing-type">
                     <label for="html" id="inline-html">
                         Choose an email format:
-                        <input type="radio" id="html" name="method" checked>
+                        <input type="radio" id="html" name="method" value="html" checked>
                         HTML
                     </label>
                     <label for="text" id="inline-text">
-                        <input type="radio" id="text" name="method">
+                        <input type="radio" id="text" name="method" value="text">
                         Text
                     </label>
                 </div>

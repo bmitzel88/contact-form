@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Information</title>
+</head>
+<body>
+    <h1>Thank you for your submission, <%= submission.fname %>!</h1>
+
+    <h2>Order Details</h2>
+    <p>Full name: <%= submission.fname%> <%= submission.lname%></p>
+    <p>Email: <%= submission.email%></p>
+    <p>Job Title: <%= submission.jtitle%></p>
+    <p>Company: <%= submission.company%></p>
+    <p>LinkedIn URL: <%= submission.lkedIn%></p>
+    <p>How We Met: <%= submission['meet-method'] %></p>
+    
+    <!-- Check to see if the other textbox needs to be added -->
+     <% if (submission['meet-method'] === 'other') { %>
+        <p>Other details: <%= submission['meet-method-other'] %></p>
+    <% } %>
+
+    <p>Message: <%= submission.message%></p>
+    <!--  ? 'Yes' : 'No' prevents empty text if not selected -->
+    <p>Mailing List: <%= submission['mailing-list'] ? 'Yes' : 'No' %></p>
+
+
+    <a href="/">Go back</a>
+</body>
+</html>

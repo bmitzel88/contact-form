@@ -28,9 +28,9 @@ app.get('/admin', (req, res) => {
     res.send(submissions);
 });
 
-app.post('/confirm', (req, res) => {
+app.post('/submit-form', (req, res) => {
     const submission = req.body;
-    submittion.timestamp = new Date();
+    submission.timestamp = new Date();
     submissions.push(submission)
     console.log(submission);
     res.render('confirm', {submission});

@@ -37,7 +37,7 @@ document.getElementById("contact-form").onsubmit = () => {
     // Validate LinkedIn URL
     let lkedIn = document.getElementById("lkedIn").value.trim();
 
-    if (lkedIn !== "" && !lkedIn.startsWith("https://linkedin.com/in/")) {
+    if (lkedIn !== "" && !lkedIn.startsWith("https://www.linkedin.com/in/")) {
         document.getElementById("err-lkedIn").style.visibility = "visible";
         isValid = false;
     }
