@@ -84,6 +84,12 @@ textarea {
     visibility: hidden;
 }
 
+#github {
+    padding-left: 120px;
+    color: rgb(123, 123, 123);
+    ;
+}
+
 @media (max-width: 600px) {
     .section1, .section2 {
         grid-template-columns: 1fr;
