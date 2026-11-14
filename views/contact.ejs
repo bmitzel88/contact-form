@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="styles/contact-styles.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <script src="js/form.js" defer></script>
+</head>
+<body>
+    <!-- Include partials/header -->
+    <%- include('partials/header') %>
+    <div id="main">
+        <div id="header">
+            <h1>Contact Form</h1>
+        </div>
+
+        <form id="contact-form" action="/submit-form" method="post">
+            <div class=section1>
+                <div>
+                    <span class="err" id="err-fname">First name is required</span>
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="fname">
+                </div>
+
+                <div>
+                    <span class="err" id="err-lname">Last name is required</span>
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lname">
+                </div>
+                
+                <div>
+                    <span class="err" id="err-jtitle">Job title is required</span>
+                    <label for="jtitle">Job Title</label>
+                    <input type="text" id="jtitle" name="jtitle">
+                </div>
+
+                <div>
+                    <span class="err" id="err-company">Company is required</span>
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+
+                <div>
+                    <span class="err" id="err-lkedIn">Must be a LinkedIn Url</span>
+                    <label for="lkedIn">LinkedIn URL</label>
+                    <input type="url" id="lkedIn" name="lkedIn">
+                </div>
+
+                <div>
+                    <span class="err" id="err-email">Email is required</span>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+            </div>
+            
+            <div class="section2">
+                
+                <div>
+                    <span class="err" id="err-meet-method">This is required</span>
+                    <label for="meet-method">How did we meet?</label>
+                    <select id="meet-method" name="meet-method">
+                        <option id="" value="">Please select</option>
+                        <option id="online" value="online">Online</option>
+                        <option id="friend" value="friend">Through a friend</option>
+                        <option id="other" value="other">Other</option>
+                    </select>
+                </div>
+                <div class="other-container">
+                    <label id="lbl-meet-method-other" for="meet-method-other">Other (Please specify)</label>
+                    <input type="text" id="meet-method-other" name="meet-method-other">
+                </div>
+            </div>
+
+            <div class="section3">
+                <label for="message">Message</label>
+                <textarea id="message" name="message"></textarea>
+
+                <label for="mailing-list">
+                    <input type="checkbox" id="mailing-list" name="mailing-list">
+                    Please add me to your mailing list
+                </label>
+
+                <div class="mailing-type">
+                    <label for="html" id="inline-html">
+                        Choose an email format:
+                        <input type="radio" id="html" name="method" value="html" checked>
+                        HTML
+                    </label>
+                    <label for="text" id="inline-text">
+                        <input type="radio" id="text" name="method" value="text">
+                        Text
+                    </label>
+                </div>
+            </div>
+            
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
+    <a href="https://github.com/bmitzel88/contact-form" id="github">GitHub</a>
+</body>
+</html>

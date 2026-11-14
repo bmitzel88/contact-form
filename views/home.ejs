@@ -3,99 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
-    <link rel="stylesheet" href="styles/contact-styles.css">
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    <script src="js/form.js" defer></script>
+    <title>Resume</title>
+    <link rel="stylesheet" href="styles/resume-styles.css">
+    <link rel="icon" type="images/png" href="images/favicon.png">
 </head>
 <body>
-    <div id="main">
-        <div id="header">
-            <h1>Contact Form</h1>
+
+    <!-- Include partials/header -->
+    <%- include('partials/header') %>
+    <header>
+        <h1>Brandon Mitzel</h1>
+        <div class="contacts">
+                <!-- Email and Phone number -->
+            <div class="left_side">
+                <p>Mitzel.Brandon@student.greenriver.edu</p>
+                <p>253-260-0818</p>
+            </div>
         </div>
+    </header>
+    <!-- Summary -->
+    <h2>Summary</h2>
+    <aside>
+        <img src="images/me.png" alt="Picture of Brandon">
+    </aside>
+    <p id="summary">
+        Motivated software developer with strong communication, attention to detail, 
+        and organizational skills, seeking to leverage hands-on programming
+        experience and project-driven development. Passionate about crafting
+        efficient, maintainable software and collaborating in fast-paced environments.
+    </p>
 
-        <form id="contact-form" action="/submit-form" method="post">
-            <div class=section1>
-                <div>
-                    <span class="err" id="err-fname">First name is required</span>
-                    <label for="fname">First Name</label>
-                    <input type="text" id="fname" name="fname">
-                </div>
+    <!-- Education -->
+    <h2>Education</h2>
+    
+    <aside>
+        <p>2023 - 2025</p>
+    </aside>
+    <p><strong>Clover Park Technical College</strong> - Lakewood, WA</p>
+    <p>Associates Degree in Applied Technology</p>
+    <p>Major: Computer Programming</p>
+    <p>GPA : 3.7</p>
 
-                <div>
-                    <span class="err" id="err-lname">Last name is required</span>
-                    <label for="lname">Last Name</label>
-                    <input type="text" id="lname" name="lname">
-                </div>
-                
-                <div>
-                    <span class="err" id="err-jtitle">Job title is required</span>
-                    <label for="jtitle">Job Title</label>
-                    <input type="text" id="jtitle" name="jtitle">
-                </div>
+    <br>
 
-                <div>
-                    <span class="err" id="err-company">Company is required</span>
-                    <label for="company">Company</label>
-                    <input type="text" id="company" name="company">
-                </div>
+    <aside>
+        <p>2026 - present</p>
+    </aside>
+    <p><strong>Green River College</strong> - Auburn, WA</p>
+    <p>Bachelor of Applied Science, expected June 2028</p>
+    <p>Major: Software Development</p>
 
-                <div>
-                    <span class="err" id="err-lkedIn">Must be a LinkedIn Url</span>
-                    <label for="lkedIn">LinkedIn URL</label>
-                    <input type="url" id="lkedIn" name="lkedIn">
-                </div>
+    <!-- Skills -->
 
-                <div>
-                    <span class="err" id="err-email">Email is required</span>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
-                </div>
-            </div>
-            
-            <div class="section2">
-                
-                <div>
-                    <span class="err" id="err-meet-method">This is required</span>
-                    <label for="meet-method">How did we meet?</label>
-                    <select id="meet-method" name="meet-method">
-                        <option id="" value="">Please select</option>
-                        <option id="online" value="online">Online</option>
-                        <option id="friend" value="friend">Through a friend</option>
-                        <option id="other" value="other">Other</option>
-                    </select>
-                </div>
-                <div class="other-container">
-                    <label id="lbl-meet-method-other" for="meet-method-other">Other (Please specify)</label>
-                    <input type="text" id="meet-method-other" name="meet-method-other">
-                </div>
-            </div>
+    <h2>Skills</h2>
+    <ul>
+        <li>Languages - Java, C#, C++, JavaScript (Node.js, React), Python</li>
+        <li>Web - HTML5, CSS3, RESTful APIs Express.js, React</li>
+        <li>Databases - SQL Server, MySQL</li>
+        <li>Tools - Visual Studio, SQL Server/VS LocalDB, Git & GitHub, Bootstrap</li>
+    </ul>
 
-            <div class="section3">
-                <label for="message">Message</label>
-                <textarea id="message" name="message"></textarea>
-
-                <label for="mailing-list">
-                    <input type="checkbox" id="mailing-list" name="mailing-list">
-                    Please add me to your mailing list
-                </label>
-
-                <div class="mailing-type">
-                    <label for="html" id="inline-html">
-                        Choose an email format:
-                        <input type="radio" id="html" name="method" value="html" checked>
-                        HTML
-                    </label>
-                    <label for="text" id="inline-text">
-                        <input type="radio" id="text" name="method" value="text">
-                        Text
-                    </label>
-                </div>
-            </div>
-            
-            <button type="submit" id="submit">Submit</button>
-        </form>
-    </div>
-    <a href="https://github.com/bmitzel88/contact-form" id="github">GitHub</a>
 </body>
 </html>

@@ -36,6 +36,11 @@ app.get('/', (req, res) =>{
     res.render(`home`);
 });
 
+// Define the contact route 
+app.get('/contact', (req, res) =>{
+    res.render(`contact`);
+});
+
 
 // Define a admin route
 app.get('/admin', async(req, res) => {

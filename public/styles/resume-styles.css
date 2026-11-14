@@ -1,0 +1,32 @@
+
+h1 { 
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, serif;
+}
+
+.contacts {
+    display: flex; 
+    justify-content: space-between; /* Makes space between the left and right side */
+    align-items: flex-start; /* Aligns both the right and left side */
+}
+
+.right_side{
+    text-align: right; 
+}
+
+aside {
+    float: right;
+    margin-right: 20px;
+}
+
+#summary {
+    width: 800px;
+}
