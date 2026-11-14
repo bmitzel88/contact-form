@@ -36,20 +36,51 @@ app.get('/', (req, res) =>{
     res.render(`home`);
 });
 
-// Array for submissions (as theres no database)
-const submissions = [];
 
 // Define a admin route
-app.get('/admin', (req, res) => {
-    res.send(submissions);
+app.get('/admin', async(req, res) => {
+    
+    try {
+        const [submissions] = await pool.query('SELECT * FROM submissions ORDER BY timestamp DESC');
+        res.render('admin', {submissions});
+    } catch(err) {
+        console.error('Database error ', err);
+        res.status(500).send('Database error occurred.')
+    }
 });
 
-app.post('/submit-form', (req, res) => {
+app.post('/submit-form', async(req, res) => {
     const submission = req.body;
     submission.timestamp = new Date();
-    submissions.push(submission)
-    console.log(submission);
-    res.render('confirm', {submission});
+
+    // Define SQL query to INSERT the new submission
+    const sql = `INSERT INTO submissions (fname, lname, jtitle, company, linkedin, email, meetMethod, meetMethodOther, message, mailingList, mailMethod)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+    // Create an array of perameters from submission data
+    const params = [
+        submission.fname,
+        submission.lname,
+        submission.jtitle,
+        submission.company,
+        submission.lkedIn,
+        submission.email,
+        submission['meet-method'],
+        submission['meet-method-other'],
+        submission.message,
+        submission['mailing-list'] === 'on' ? 1 : 0, // turn it into an integer
+        submission.method
+    ];
+
+    // Execute the query
+    const [result] = await pool.execute(sql, params);
+
+    // Get the ID from the newly inserted row
+    submission.id = result.insertId;
+    console.log("A new row was inserted with ID " + submission.id);
+    
+    //Display the confirmation page
+    res.render('confirm', { submission });
 });
 
 

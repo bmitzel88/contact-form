@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+
+    <!-- Must come first -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <!-- Add data table information -->
+    <script src="https://cdn.datatables.net/3.1.4/js/dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/3.1.4/css/dataTables.dataTables.min.css">
+</head>
+<body>
+    <h1>View Submissions</h1>
+
+    <table id="submission-table" class="display">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>LinkedIn</th>
+                <th>Email</th>
+                <th>Meet Method</th>
+                <th>Meet Method Other</th>
+                <th>Message</th>
+                <th>Mailing List</th>
+                <th>Mailing Method</th>
+                <th>Date and Time</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% submissions.forEach(sub => { %>
+                <tr>
+                    <td><%= sub.fname %> <%= sub.lname %></td>
+                    <td><%= sub.jtitle %></td>
+                    <td><%= sub.company %></td>
+                    <td><%= sub.linkedin %></td>
+                    <td><%= sub.email %></td>
+                    <td><%= sub.meetMethod %></td>
+                    <td><%= sub.meetMethodOther %></td>
+                    <td><%= sub.message %></td>
+                    <td><%= sub.mailingList %></td>
+                    <td><%= sub.mailMethod %></td>
+                    <td><%= sub.timestamp.toLocaleString() %></td>
+                </tr>
+            <% }); %>
+
+        </tbody>
+
+    </table>
+
+    <script>
+        new DataTable('#submission-table');
+    </script>
+
+</body>
+</html>
