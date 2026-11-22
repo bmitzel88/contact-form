@@ -47,8 +47,8 @@
                     <td><%= sub.meetMethod %></td>
                     <td><%= sub.meetMethodOther %></td>
                     <td><%= sub.message %></td>
-                    <td><%= sub.mailingList %></td>
-                    <td><%= sub.mailMethod %></td>
+                    <td><%= sub.mailingList === 1 ? 'on' : 'off' %></td>
+                    <td><%= sub.mailMethod%></td>
                     <td><%= sub.timestamp.toLocaleString() %></td>
                 </tr>
             <% }); %>
